@@ -11,6 +11,12 @@ app.get("/", (req, res) => {
     res.sendFile('./public/auth.html')
 })
 
+app.get("/app", (req, res) => {
+    const {access_token} = req.body
+    console.log("/app gets", access_token)
+    res.sendFile('./public/index.html')
+})
+
 app.get("/auth", (req, res) => {
     const {code} = req.query
     fetch(`https://api.instagram.com/oauth/access_token`, {
