@@ -3,12 +3,12 @@ const fetch = require('node-fetch')
 const app = express()
 const { PORT = 3000 } = process.env
 
+/*
+https://developers.facebook.com/docs/instagram-basic-display-api/getting-started#valid-oauth-redirect-uris
+*/
+
 app.get("/", (req, res) => {
-    res.redirect(`https://api.instagram.com/oauth/authorize
-    ?client_id=2637301779709157
-    &redirect_uri=http://instainter.herokuapp.com/auth
-    &scope=user_profile,user_media
-    &response_type=code`)
+    res.sendFile('./public/auth.html')
 })
 
 app.get("/auth", (req, res) => {
