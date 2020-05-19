@@ -1,6 +1,7 @@
 const express = require('express')
 const fetch = require('node-fetch')
 const app = express()
+const path = require('path')
 const { PORT = 3000 } = process.env
 
 /*
@@ -8,13 +9,13 @@ https://developers.facebook.com/docs/instagram-basic-display-api/getting-started
 */
 
 app.get("/", (req, res) => {
-    res.sendFile('./public/auth.html')
+    res.sendFile(path.join(__dirname,'public','auth.html'))
 })
 
 app.get("/app", (req, res) => {
     const {access_token} = req.body
     console.log("/app gets", access_token)
-    res.sendFile('./public/index.html')
+    res.sendFile(path.join(__dirname,'public','index.html'))
 })
 
 app.get("/auth", (req, res) => {
