@@ -12,13 +12,13 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname,'public','auth.html'))
 })
 
-app.get("/app", (req, res) => {
+app.get("/app/", (req, res) => {
     const {access_token} = req.body
     console.log("/app gets", access_token)
     res.sendFile(path.join(__dirname,'public','index.html'))
 })
 
-app.get("/auth", (req, res) => {
+app.get("/auth/", (req, res) => {
     console.log(JSON.stringify(req.params, null, 3))
     const {code} = req.params
     fetch(`https://api.instagram.com/oauth/access_token`, {
@@ -27,7 +27,7 @@ app.get("/auth", (req, res) => {
             client_id: 2637301779709157,
             client_secret: process.env.INSTAGRAM_SECRET,
             grant_type: 'authorization_code',
-            redirect_uri: 'https://bernards-photos.herokuapp.com/app',
+            redirect_uri: 'https://bernards-photos.herokuapp.com/app/',
             code: code
         })
     })
