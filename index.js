@@ -20,9 +20,7 @@ app.get("/app/", (req, res) => {
 })
 
 app.get("/auth/", (req, res) => {
-    console.log('params', req.params)
-    console.log('body', req.body)
-    const {code} = req.params
+    const {code} = req.query
     const body = new URLSearchParams()
     body.append('client_id', 2637301779709157)
     body.append('client_secret', process.env.INSTAGRAM_SECRET)
