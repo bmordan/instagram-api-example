@@ -36,4 +36,4 @@ app.get("/auth", (req, res) => {
     })
 })
 
-app.listen(PORT, () => console.log(`Instagram intergration ready on port ${PORT} 🎉`))
+app.listen(PORT, () => console.log(`Instagram intergration ready on port ${PORT} 🎉 I got Secrets too ${process.env.INSTAGRAM_SECRET}`))
