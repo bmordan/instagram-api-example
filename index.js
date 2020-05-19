@@ -3,8 +3,6 @@ const fetch = require('node-fetch')
 const app = express()
 const { PORT = 3000 } = process.env
 
-app.use(express.static('public'))
-
 app.get("/", (req, res) => {
     res.redirect(`https://api.instagram.com/oauth/authorize
     ?client_id=2637301779709157
