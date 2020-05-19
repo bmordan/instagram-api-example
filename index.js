@@ -13,9 +13,7 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname,'public','auth.html'))
 })
 
-app.get("/app/", (req, res) => {
-    const {access_token} = req.body
-    console.log("/app/ gets", access_token, req.body)
+app.get("/app/:access_token", (req, res) => {
     res.sendFile(path.join(__dirname,'public','index.html'))
 })
 
@@ -30,7 +28,7 @@ app.get("/auth/", (req, res) => {
     fetch(`https://api.instagram.com/oauth/access_token`, { method: 'POST', body})
     .then(res => res.json())
     .then(instagram => {
-        res.send(`OK we have an access token: ${instagram.access_token}`)
+        res.redirect(`/app/${instagram.access_token}`)
     })
     .catch(err => {
         res.send(JSON.stringify(err, null, 4))
