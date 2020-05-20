@@ -1,5 +1,7 @@
 # Instagram API Setup
 
+![crappy quality screen grab](https://user-images.githubusercontent.com/4499581/82462840-ffd20980-9ab3-11ea-928d-635e99f61f0b.gif)
+
 You can't run this because I have the secret. However you can follow these steps to create your own credentials
 
 [https://developers.facebook.com/docs/instagram-basic-display-api/getting-started#valid-oauth-redirect-uris](https://developers.facebook.com/docs/instagram-basic-display-api/getting-started#valid-oauth-redirect-uris)
