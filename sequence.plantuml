@@ -1,0 +1,9 @@
+@startuml
+your_server -> browser: serve the Instagram oauth box
+browser -> instagram_api: match credentials with a test user
+instagram_api -> your_server: sends a code to your redirect_uri (your server)
+your_server -> instagram_api: posts that code and your client id and secret
+instagram_api -> your_server: sends an access_token
+your_server -> browser: render an html page and capture the access_token from the url
+browser -> instagram_api: query the graph using the access_token
+@enduml
