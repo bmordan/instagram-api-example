@@ -38,16 +38,16 @@
         </footer>
         <script>
           const access_token = window.location.pathname.split('/').pop()
-          const recent = `https://graph.instagram.com/me?fields=id,username&access_token=${access_token}`
+          const recent = `https://graph.instagram.com/me/media?fields=id,username,media_url,media_type,caption&access_token=${access_token}`
           fetch(recent)
             .then(res => res.json())
-            .then(results => {
-              console.log(results)
+            .then(medianode => {
+              const {id, username, media_url, media_type, caption} = medianode
               // const urls = results.data.map(({images, tags = []}) => {
               //   return [images.standard_resolution.url, tags]
               // })
 
-              // console.log(urls)
+              console.log({id, username, media_url, media_type, caption})
             })
             .catch(console.error)
         </script>
