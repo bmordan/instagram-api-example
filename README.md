@@ -4,7 +4,7 @@ You can't run this because I have the secret. However you can follow these steps
 
 [https://developers.facebook.com/docs/instagram-basic-display-api/getting-started#valid-oauth-redirect-uris](https://developers.facebook.com/docs/instagram-basic-display-api/getting-started#valid-oauth-redirect-uris)
 
-Its quite an awkward API to work with because I will not run on localhost. Here are some things I discovered:
+Its quite an awkward API to work with because it will not run on localhost. Here are some things I discovered:
 
 * You have to provide a `redirect_uri` that is served over https (use heroku)
 * You can't use <u>"insta"</u> or <u>"gram"</u> in the `redirect_uri`
